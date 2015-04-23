@@ -1,0 +1,54 @@
+
+<%= form_for(@descr_venda) do |f| %>
+  <% if @descr_venda.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@descr_venda.errors.count, "error") %> prohibited this descr_venda from being saved:</h2>
+
+      <ul>
+      <% @descr_venda.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :id_venda %><br />
+    <%= f.number_field :id_venda %>
+  </div>
+  <div class="field">
+    <%= f.label :cod %><br />
+    <%= f.text_field :cod %>
+  </div>
+  <div class="field">
+    <%= f.label :produto %><br />
+    <%= f.text_field :produto %>
+  </div>
+  <div class="field">
+    <%= f.label :valor_unit %><br />
+    <%= f.text_field :valor_unit %>
+  </div>
+  <div class="field">
+    <%= f.label :quant %><br />
+    <%= f.number_field :quant %>
+  </div>
+  <div class="field">
+    <%= f.label :valor_total %><br />
+    <%= f.text_field :valor_total %>
+  </div>
+  <div class="field">
+    <%= f.label :fonecli %><br />
+    <%= f.text_field :fonecli %>
+  </div>
+  <div class="field">
+    <%= f.label :data_venda %><br />
+    <%= f.date_select :data_venda %>
+  </div>
+  <div class="field">
+    <%= f.label :tipo_prod %><br />
+    <%= f.text_field :tipo_prod %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+	
+<head>
+	<title>PizzaWEB</title>
+		<meta charset="utf-8">
+		<link href="/stylesheets/style.css" rel='stylesheet' type='text/css' />
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<script type="application/x-javascript"> addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false); function hideURLbar(){ window.scrollTo(0,1); } </script>
+		<!--webfonts-->
+		<link href='http://fonts.googleapis.com/css?family=Open+Sans:600italic,400,300,600,700' rel='stylesheet' type='text/css'>
+		<!--//webfonts-->
+		
+</head>
+<body>
+	
+	<h2 class="h2_class">Relação de Pizzas</h2>
+<div id="fundo_tabela">
+  
+
+<table>
+  
+  <tr>
+    <th><div id="div_num_venda">Nº Venda</div></th>
+    <th><div id="div_prod">Pizza</div></th>
+    <th><div id="div_quantidade">Quant:</div></th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @descr_vendas.each do |descr_venda| %>
+  <tr>
+    <td><div id="div_num_venda"><%= descr_venda.id_venda %></div></td>
+    <td><div id=div_prod><%= descr_venda.produto %></div></td>
+    <td><div id="div_quantidade"><%= descr_venda.quant %></div></td>
+    <td><%= link_to image_tag("/images/finalizar.png"), descr_venda, confirm: 'Deseja finalizar este pedido?', method: :delete %></td>
+  </tr>
+<% end %>
+</table>
+</div>
+<p>
+<%= link_to image_tag("/images/atualiza_pedido.png"), descr_vendas_path %>
+<br />	
+
+</body>
+</html>
+
+
+

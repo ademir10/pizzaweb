@@ -1,0 +1,2 @@
+module DescrVendasHelper
+end

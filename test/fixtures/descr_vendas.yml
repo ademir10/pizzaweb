@@ -1,0 +1,23 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  id_venda: 1
+  cod: MyString
+  produto: MyString
+  valor_unit: 
+  quant: 1
+  valor_total: 
+  fonecli: MyString
+  data_venda: 2015-04-22
+  tipo_prod: MyString
+
+two:
+  id_venda: 1
+  cod: MyString
+  produto: MyString
+  valor_unit: 
+  quant: 1
+  valor_total: 
+  fonecli: MyString
+  data_venda: 2015-04-22
+  tipo_prod: MyString
