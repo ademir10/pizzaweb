@@ -82,8 +82,20 @@ class DescrVendasController < ApplicationController
     @descr_venda = DescrVenda.find(params[:id])
     DescrVenda.update(@descr_venda.id, :pizza_pronta => 'SIM')
     
+    #CONTA E COMPARA A QUANTIDADE DE PIZZAS DO MESMO PEDIDO
+    @total_ID = DescrVenda.where(:id_venda => @descr_venda.id_venda, :categ_prod => "PIZZA").count
+    @total_PRONTO = DescrVenda.where(["pizza_pronta = ? and id_venda = ?", "SIM", @descr_venda.id_venda]).count
+    
+    #ATUALIZA A TABELA DADOS VENDA SOMENTE SE NÃO TIVER MAIS NENHUMA PIZZA Á FAZER DO MESMO PEDIDO
+    if @total_PRONTO == @total_ID
+    DadosVenda.where(:id => @descr_venda.id_venda).update_all(:status => 'PRONTO')
+    #render :text => "fez o UPDATE"    
+    else
+    # render :text => "NÃO fez o UPDATE"
+    end
+        
       respond_to do |format|
-      format.html { redirect_to descr_vendas_url }
+      format.html { redirect_to descr_vendas_url}
       format.json { head :no_content }
     end
   end

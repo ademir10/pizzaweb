@@ -1,0 +1,2 @@
+module DadosVendaHelper
+end

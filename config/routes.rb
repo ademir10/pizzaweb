@@ -1,6 +1,8 @@
 Pizzaweb::Application.routes.draw do
  
-    resources :descr_vendas 
+    resources :descr_vendas
+
+    
   
   # The priority is based upon order of creation:
   # first created -> highest priority.
